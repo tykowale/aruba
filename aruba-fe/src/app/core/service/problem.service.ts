@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { Problem } from "../../shared/Problem";
+import { Observable, of } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { catchError } from "rxjs/operators";
+import { MathProblem } from "../../shared/model/MathProblem";
+import { MathAnswer } from "../../shared/model/MathAnswer";
 
 @Injectable({
   providedIn: "root",
@@ -14,8 +16,18 @@ export class ProblemService {
   constructor(private http: HttpClient) {
   }
 
-  genAdditionProblem(): Observable<Problem> {
-    return this.http.get<Problem>(this.addUrl);
+  genAdditionProblem(mathAnswer: MathAnswer = {}): Observable<MathProblem> {
+    return this.http.post<MathProblem>(this.addUrl, mathAnswer, this.httpOptions)
+      .pipe(
+        catchError(this.handleError<MathProblem>()),
+      );
   }
 
+  private handleError<T>(result?: T): (error: any) => Observable<T> {
+    return (error: any): Observable<T> => {
+      console.error(error);
+
+      return of(result as T);
+    };
+  }
 }

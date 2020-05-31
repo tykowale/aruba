@@ -25,7 +25,7 @@ public class ProblemController {
     ) {
         PreviousResult previousResult = null;
 
-        if (answer != null) {
+        if (answer.getPreviousProblem() != null) {
             previousResult = problemService.checkAnswer(answer);
         }
 
