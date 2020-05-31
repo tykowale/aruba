@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from "@angular/core";
 import { Problem } from "../../shared/model/Problem";
 import { ProblemService } from "../../core/service/problem.service";
 import { MathAnswer } from "../../shared/model/MathAnswer";
+import { PreviousResult } from "../../shared/model/PreviousResult";
+import { MathProblem } from "../../shared/model/MathProblem";
 
 @Component({
   selector: "app-problem-solver",
@@ -11,6 +13,7 @@ import { MathAnswer } from "../../shared/model/MathAnswer";
 export class ProblemSolverComponent implements OnInit {
 
   problem: Problem;
+  previousResult: PreviousResult;
 
   @Input()
   answer: number;
@@ -24,7 +27,7 @@ export class ProblemSolverComponent implements OnInit {
 
   fetchProblem(mathAnswer: MathAnswer = {}): void {
     this.problemService.genAdditionProblem(mathAnswer)
-      .subscribe(data => this.problem = data.problem);
+      .subscribe(data => this.readResponse(data));
   }
 
   check(): void {
@@ -36,4 +39,9 @@ export class ProblemSolverComponent implements OnInit {
     this.fetchProblem(mathAnswer);
   }
 
+  readResponse(data: MathProblem): void {
+    this.problem = data.problem;
+    this.previousResult = data.previousResult;
+    delete this.answer;
+  }
 }

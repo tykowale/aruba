@@ -1,25 +1,35 @@
 <div *ngIf="problem" class="clr-row">
   <div class="clr-col-lg-5 clr-col-md-8 clr-col-12">
     <div class="card">
-        <div class="card-block">
-          <div class="card-title">
-            {{problem.x}}
-          </div>
-          <div class="card-title">
-            +
-          </div>
-          <div class="card-title">
-            {{problem.y}}
-          </div>
-          <div class="card-text">
-            <clr-input-container>
-              <input clrInput placeholder="Solution" [(ngModel)]="answer" (keyup.enter)="check()"/>
-              <clr-control-helper>Solution</clr-control-helper>
-            </clr-input-container>
 
-            <button (click)="check()" class="btn btn-outline">Check</button>
-          </div>
+      <div class="card-block">
+        <div class="card-title">
+          {{problem.x}}
         </div>
+        <div class="card-title">
+          +
+        </div>
+        <div class="card-title">
+          {{problem.y}}
+        </div>
+        <div class="card-text">
+          <clr-input-container>
+            <input clrInput placeholder="Solution" [(ngModel)]="answer"
+                   (keyup.enter)="check()" />
+            <clr-control-helper>Solution</clr-control-helper>
+          </clr-input-container>
+
+          <button (click)="check()" class="btn btn-outline">Check</button>
+        </div>
+      </div>
+
+      <div *ngIf="previousResult">
+        <div class="card-footer">
+          {{previousResult.correct ? "Correct" : "Wrong" }} the answer
+          was {{previousResult.actualAnswer}}
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
