@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
+import { Observable } from "rxjs";
 import { Problem } from "../../shared/Problem";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
@@ -16,12 +16,6 @@ export class ProblemService {
 
   genAdditionProblem(): Observable<Problem> {
     return this.http.get<Problem>(this.addUrl);
-    // return of(
-    //   {x: this.randomNumber(), y: this.randomNumber(), op: "ADD"},
-    // );
   }
 
-  randomNumber(): number {
-    return Math.floor((Math.random() * 100) + 1);
-  }
 }

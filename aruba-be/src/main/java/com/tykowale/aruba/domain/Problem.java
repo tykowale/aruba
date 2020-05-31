@@ -1,13 +1,15 @@
 package com.tykowale.aruba.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 final public class Problem {
 
-    final int x;
-    final int y;
-    final Operation op;
+    int x;
+    int y;
+    Operation op;
 
     public Problem(int x, int y, Operation op) {
         this.x = x;
