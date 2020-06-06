@@ -1,0 +1,24 @@
+# Dev and general use config
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/aruba
+    username: root
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  output:
+    ansi:
+      enabled: always
+
+
+aruba:
+  security:
+    jwt:
+      # This token must be encoded using Base64
+      # currently is just base64 encoded 'secret' need a real one for prod
+      base64-secret: c2VjcmV0Cg==
+      # Token is valid 24 hours
+      token-validity-in-seconds: 86400
+

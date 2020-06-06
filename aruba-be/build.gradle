@@ -24,9 +24,10 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-security"
     implementation "org.springframework.boot:spring-boot-starter-logging"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor
     implementation "io.jsonwebtoken:jjwt-api"
     implementation "io.jsonwebtoken:jjwt-impl"
-    implementation "io.jsonwebtoken:jjwt-jackson" 
+    implementation "io.jsonwebtoken:jjwt-jackson"
 
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
