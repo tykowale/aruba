@@ -17,7 +17,6 @@ public class ArubaProperties {
 
         @Data
         public static class Jwt {
-            String secret = null;
             String base64Secret = null;
             long tokenValidityInSeconds = 1800; // 30 minutes
             long tokenValidityInSecondsForRememberMe = 2592000; // 30 days
