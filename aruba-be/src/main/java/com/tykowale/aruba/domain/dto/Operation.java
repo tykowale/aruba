@@ -1,4 +1,4 @@
-package com.tykowale.aruba.domain;
+package com.tykowale.aruba.domain.dto;
 
 public enum Operation {
     ADD('+'),

@@ -1,7 +1,7 @@
 package com.tykowale.aruba.controller;
 
 
-import com.tykowale.aruba.domain.PreviousResult;
+import com.tykowale.aruba.domain.dto.PreviousResult;
 import com.tykowale.aruba.dto.MathAnswer;
 import com.tykowale.aruba.dto.MathProblem;
 import com.tykowale.aruba.service.ProblemService;

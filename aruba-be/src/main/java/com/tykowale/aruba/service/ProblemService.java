@@ -1,8 +1,8 @@
 package com.tykowale.aruba.service;
 
-import com.tykowale.aruba.domain.Operation;
-import com.tykowale.aruba.domain.PreviousResult;
-import com.tykowale.aruba.domain.Problem;
+import com.tykowale.aruba.domain.dto.Operation;
+import com.tykowale.aruba.domain.dto.PreviousResult;
+import com.tykowale.aruba.domain.dto.Problem;
 import com.tykowale.aruba.dto.MathAnswer;
 import org.springframework.stereotype.Service;
 

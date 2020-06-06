@@ -1,8 +1,8 @@
 package com.tykowale.aruba.dto;
 
 
-import com.tykowale.aruba.domain.PreviousResult;
-import com.tykowale.aruba.domain.Problem;
+import com.tykowale.aruba.domain.dto.PreviousResult;
+import com.tykowale.aruba.domain.dto.Problem;
 import lombok.Data;
 
 @Data

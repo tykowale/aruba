@@ -1,7 +1,7 @@
 package com.tykowale.aruba.dto;
 
-import com.tykowale.aruba.domain.Problem;
-import com.tykowale.aruba.domain.Solution;
+import com.tykowale.aruba.domain.dto.Problem;
+import com.tykowale.aruba.domain.dto.Solution;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
